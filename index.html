@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head lang="ar">
+    <meta charset="utf-8" />
+    <link rel="icon" href="./assets/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="stylesheet" href="./static/swiper-bundle.min.css" />
+    <script src="./static/swiper-bundle.min.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="./static/data.js"></script>
+    <meta
+      name="description"
+      content="شركه البوارق العربيه - AL-BAWARIQ AL ARABIA"
+    />
+    <meta
+      name="description"
+      content="البوارق العربيه - AL-BAWARIQ AL ARABIA "
+    />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="./static/index.css" />
+    <style>
+      .lds-ripple {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      .lds-ripple div {
+        position: absolute;
+        border: 4px solid #f05600;
+        opacity: 1;
+        border-radius: 50%;
+        animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      }
+      .lds-ripple div:nth-child(2) {
+        animation-delay: -0.5s;
+      }
+      @keyframes lds-ripple {
+        0% {
+          top: 36px;
+          left: 36px;
+          width: 0;
+          height: 0;
+          opacity: 1;
+        }
+        100% {
+          top: 0px;
+          left: 0px;
+          width: 72px;
+          height: 72px;
+          opacity: 0;
+        }
+      }
+      body[data-loading="false"] #loader {
+        display: none !important;
+      }
+      body[data-loading="true"] {
+        overflow: hidden;
+      }
+    </style>
+    <title>البوارق العربيه - AL-BAWARIQ AL ARABIA</title>
+  </head>
+  <body
+    x-data
+    x-bind:style="$store.modals.activeModal && { overflow: 'hidden' }"
+    lang="ar"
+    data-loading="true"
+    style="scroll-behavior: smooth; font-family: 'Cairo', sans-serif"
+  >
+    <main class="app">
+      <!-- main stuff -->
+      <header class="header">
+        <div class="container">
+          <div class="part logo">
+            <img src="./assets/images/logo.png" alt="Componay Logo" />
+          </div>
+          <div class="parts-container-3">
+            <div class="part location">
+              <a
+                class="part-container link"
+                target="_blank"
+                rel="noreferrer"
+                href="http://maps.google.com/?q=4480 طريق الامام سعود بن فيصل، الصحافة الرياض 13321 6833 طريق الامام سعود بن فيصل، الصحافة، الرياض 13321 6833"
+                ><div class="icon">
+                  <i class="bx bx-map"></i>
+                </div>
+                <div class="text">
+                  <h3>المملكة العربية السعودية - الرياض</h3>
+                </div></a
+              >
+            </div>
+            <div class="part email">
+              <a
+                class="part-container link"
+                target="_blank"
+                rel="noreferrer"
+                href="mailto:info@albawariq.com"
+                ><div class="icon">
+                  <i class="bx bx-envelope" style="color: rgb(255, 163, 0)"></i>
+                </div>
+                <div class="text email-time">
+                  <h3>info@albawariq.com</h3>
+                  <p>09:00am - 8:00pm</p>
+                </div></a
+              >
+            </div>
+            <div class="part call-info">
+              <a
+                class="part-container link"
+                target="_blank"
+                rel="noreferrer"
+                href="tel:0505617740"
+                ><div class="icon">
+                  <i class="bx bx-phone" style="color: rgb(255, 163, 0)"></i>
+                </div>
+                <div class="text"><h3>0505617740 - 920009975</h3></div></a
+              >
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- mobile nav bar -->
+      <div class="navbar mobile-navbar">
+        <div class="container">
+          <div class="menu">
+            <i class="bx bx-menu menu-icon"></i>
+          </div>
+          <div class="search">
+            <i class="bx bx-search-alt-2 search-icon"></i>
+          </div>
+        </div>
+      </div>
+      <!-- normal navbar -->
+      <div class="navbar">
+        <div class="container">
+          <div class="left">
+            <div class="items">
+              <a href="/" class="link"
+                ><h2 class="icon">
+                  <i class="bx bx-home"></i></h2></a
+              ><a href="#we-company" class="link"
+                ><h2>من نحن<span></span></h2></a
+              ><a href="#contact-us" class="link"
+                ><h2>الأتصال بنا<span></span></h2></a
+              ><a href="#our-service" class="link"
+                ><h2>خدماتنا<span></span></h2></a
+              ><a href="#our-products" class="link"
+                ><h2>منتجاتنا<span></span></h2
+              ></a>
+            </div>
+          </div>
+          <div class="right">
+            <div class="icons">
+              <div class="icon facebook">
+                <i class="bx bxl-facebook-square"></i>
+              </div>
+              <div class="icon twitter">
+                <i class="bx bxl-twitter"></i>
+              </div>
+              <div class="icon whatsapp">
+                <i class="bx bxl-whatsapp"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- home swiper -->
+      <div class="home-swiper">
+        <div class="container">
+          <div class="home-swiper-swiper swiper-container-rtl swiper">
+            <div class="swiper-wrapper">
+              <div
+                data-swiper-slide-index="5"
+                class="swiper-slide swiper-slide-active"
+              >
+                <img
+                  src="./assets/images/home-swiper/9-min.jpg"
+                  alt="شركه البوارق العربيه"
+                  loading="lazy"
+                />
+              </div>
+              <div class="swiper-slide" data-swiper-slide-index="0">
+                <img
+                  src="./assets/images/home-swiper/8-min.jpg"
+                  alt="شركه البوارق العربيه"
+                  loading="lazy"
+                />
+              </div>
+              <div class="swiper-slide" data-swiper-slide-index="1">
+                <img
+                  src="./assets/images/home-swiper/slider-min.png"
+                  alt="شركه البوارق العربيه"
+                  loading="lazy"
+                />
+              </div>
+              <div class="swiper-slide" data-swiper-slide-index="2">
+                <img
+                  src="./assets/images/home-swiper/5-min.jpg"
+                  alt="شركه البوارق العربيه"
+                  loading="lazy"
+                />
+              </div>
+              <div class="swiper-slide" data-swiper-slide-index="3">
+                <img
+                  src="./assets/images/home-swiper/انذار-min.png"
+                  alt="شركه البوارق العربيه"
+                  loading="lazy"
+                />
+              </div>
+              <div class="swiper-slide" data-swiper-slide-index="4">
+                <img
+                  src="./assets/images/home-swiper/4-min.jpeg"
+                  alt="شركه البوارق العربيه"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End home swiper -->
+      <!-- who are we -->
+      <div class="we-company" id="we-company">
+        <div class="container">
+          <div class="right">
+            <div>
+              <h2>من نحن !</h2>
+              <p>
+                شركة البوارق العربية هي شركة متخصصة في مجال توفير أنظمة الأمن
+                والسلامة والحلول والبرامج الذكية المساعدة لمختلف القطاعات
+                الحكومية والخاصة.<br />تقوم البوارق العربية بتوفير مختلف الحلول
+                التطويرية الفنية التخصصية، والتنفيذية لأنظمة الأمن والسلامة من
+                الحريق كعمل مخططات السلامة من توريد وتنفيذ وإشراف و إستشارات و
+                إستخراج شهادة السلامة من الدفاع المدني بالإضافة إلى خدمات توفير
+                المهندسين.<br />إن ما يميز فريق عملنا هو إطلاعنا ومعرفتنا
+                بالمتطلبات التنظيمية والتشريعية و وجود كادر متخصص فني مؤهل يدعم
+                هذه المتطلبات وبما يتلائم مع إحتياجات عملائنا و إحتياجات
+                مشاريعهم.<br />إن احترافنا و خبراتنا هي سر نجاحنا ، وقد تمكنا من
+                نقل هذه الخبرات الى واقع ملموس في مختلف مشاريعنا الحكومية
+                والقطاع الخاص.
+              </p>
+              <div class="more">
+                <a href="#contact-us" class="link" style="color: inherit"
+                  ><div class="link read-more">أتصل بنا..</div></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="left">
+            <div>
+              <img
+                src="./assets/images/home-swiper/we-company-min.png"
+                alt="our company"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- we offer -->
+      <div class="we-offer" id="we-offer">
+        <div class="container">
+          <div class="left">
+            <div>
+              <img
+                src="./assets/images/service/about-min.png"
+                alt="our company"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="right">
+            <h2>ماذا نقدم</h2>
+            <div class="images">
+              <div class="img-container">
+                <img
+                  src="./assets/images/service/offer/fire.png"
+                  alt="our offers"
+                  loading="lazy"
+                />
+                <h3>شهاده سلامه التمديدات الكهربائيه</h3>
+              </div>
+              <div class="img-container">
+                <img
+                  src="./assets/images/service/offer/safty-1.png"
+                  alt="our offers"
+                  loading="lazy"
+                />
+                <h3>ترخيص-الدفاع-المدني</h3>
+              </div>
+              <div class="img-container">
+                <img
+                  src="./assets/images/service/offer/sdsd.png"
+                  alt="our offers"
+                  loading="lazy"
+                />
+                <h3>تركيب جميع أنظمة الإنذار المبكر من الحريق</h3>
+              </div>
+              <div class="img-container">
+                <img
+                  src="./assets/images/service/offer/safty-1.png"
+                  alt="our offers"
+                  loading="lazy"
+                />
+                <h3>تركيب جميع أنظمه الأطفاء</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- our service -->
+      <div class="our-service" id="our-service" x-data="{ tab: 'photos' }">
+        <div class="container">
+          <div class="header">
+            <div class="title">
+              <span></span>
+              <h2><strong>نقدم لكم</strong> ... بعض خدماتنا</h2>
+            </div>
+            <div class="tabs">
+              <a
+                :class="{ 'active': tab === 'all' }"
+                x-on:click.prevent="tab = 'all'"
+                href="#"
+                class="tab"
+                ><h3>الكل</h3></a
+              >
+              <a
+                :class="{ 'active': tab === 'photos' }"
+                x-on:click.prevent="tab = 'photos'"
+                href="#"
+                class="tab"
+                ><h3>الصور</h3></a
+              >
+              <a
+                :class="{ 'active': tab === 'videos' }"
+                x-on:click.prevent="tab = 'videos'"
+                href="#"
+                class="tab"
+                ><h3>الفيديوهات</h3></a
+              >
+            </div>
+          </div>
+          <div class="sections-container">
+            <div x-show="tab === 'photos' || tab==='all'" class="image-swiper">
+              <div class="container">
+                <div
+                  class="swiper-container photos-swiper swiper-container-horizontal swiper-container-pointer-events swiper-container-rtl swiper"
+                >
+                  <div
+                    class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+                  ></div>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="img-container">
+                        <div>
+                          <span><i class="bx bx-image-alt image-icon"></i></span
+                          ><img
+                            src="./assets/images/service/1-min.png"
+                            alt="first img"
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img-container">
+                        <div>
+                          <span><i class="bx bx-image-alt image-icon"></i></span
+                          ><img
+                            src="./assets/images/service/2-min.png"
+                            alt="first img"
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img-container">
+                        <div>
+                          <span><i class="bx bx-image-alt image-icon"></i></span
+                          ><img
+                            src="./assets/images/service/3-min.png"
+                            alt="first img"
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img-container">
+                        <div>
+                          <span><i class="bx bx-image-alt image-icon"></i></span
+                          ><img
+                            src="./assets/images/service/4-min.png"
+                            alt="first img"
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img-container">
+                        <div>
+                          <span><i class="bx bx-image-alt image-icon"></i></span
+                          ><img
+                            src="./assets/images/service/5-min.png"
+                            alt="first img"
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img-container">
+                        <div>
+                          <span><i class="bx bx-image-alt image-icon"></i></span
+                          ><img
+                            src="./assets/images/service/6-min.png"
+                            alt="first img"
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img-container">
+                        <div>
+                          <span><i class="bx bx-image-alt image-icon"></i></span
+                          ><img
+                            src="./assets/images/service/7-min.png"
+                            alt="first img"
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div x-show="tab === 'videos' || tab==='all'" class="products">
+              <div class="container">
+                <div class="header">
+                  <div class="title">
+                    <span></span>
+                    <h2><strong>نقدم لكم</strong> ... بعض منتجاتنا</h2>
+                  </div>
+                </div>
+                <div class="product-swiper">
+                  <div class="container">
+                    <div
+                      class="swiper-container product-swiper-swiper swiper-container-horizontal swiper-container-pointer-events swiper-container-rtl swiper"
+                    >
+                      <div class="swiper-wrapper" x-data>
+                        <template x-for="product in products">
+                          <div
+                            class="swiper-slide"
+                            @click="$store.modals.modal(product)"
+                          >
+                            <div class="link">
+                              <div class="swiper-slide-container">
+                                <div class="information">
+                                  <div class="title">
+                                    <span class="dot-icon"></span>
+                                    <h3 x-text="product.heading">heading</h3>
+                                  </div>
+                                </div>
+                                <div
+                                  x-text="product.content.slice(0,50) + '....'"
+                                  class="description"
+                                ></div>
+                                <div class="img-container">
+                                  <div class="image">
+                                    <img
+                                      :src="product.src"
+                                      :alt="product.heading"
+                                      loading="lazy"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </template>
+                      </div>
+                      <div class=".product-swiper-swiper-pagination"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- our news -->
+      <div class="our-news">
+        <div class="container">
+          <div class="header">
+            <div class="title">
+              <span></span>
+              <h2>الاخبار <strong>اليومية ..</strong></h2>
+            </div>
+          </div>
+          <div class="our-news-swiper">
+            <div class="container">
+              <div
+                class="swiper-container our-news-swiper-swiper swiper-container-pointer-events swiper-container-rtl swiper"
+              >
+                <div x-data class="swiper-wrapper">
+                  <template x-for="ournew in ourNews">
+                    <div class="swiper-slide" @click="$store.modals.modal(ournew)">
+                      <span class="bottom-line"></span>
+                      <div class="link">
+                        <div class="swiper-slide-container">
+                          <div class="img-container">
+                            <div class="image">
+                              <img
+                                :src="ournew.src"
+                                :alt="ournew.heading"
+                                loading="lazy"
+                              />
+                            </div>
+                          </div>
+                          <div class="information">
+                            <div class="title">
+                              <h3 x-text="ournew.heading">heading</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </template>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="header company-service">
+            <div class="title">
+              <span></span>
+              <h2><strong>خدمات الشركه</strong> تصفح الأن . . .</h2>
+            </div>
+          </div>
+          <div class="our-news-swiper">
+            <div class="container">
+              <div
+                class="swiper-container swiper-container-rtl swiper orange-swiper"
+              >
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide orange">
+                    <span class="bottom-line"></span>
+                    <div class="link">
+                      <div class="swiper-slide-container circles">
+                        <div class="circle-container">
+                          <span class="center-text">معرفه أكثر بالجدول</span>
+                          <div class="circle">
+                            <div class="big-circle">
+                              <span class="medium-circle"
+                                ><span class="small-circle"></span
+                              ></span>
+                            </div>
+                          </div>
+                          <span class="curve-line"></span
+                          ><span class="verticl-line"></span
+                          ><span class="bottom-dot"></span>
+                        </div>
+                        <div class="information">
+                          <div class="title">
+                            <h3>مهمات السلامة و الصحة المهنية</h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide orange">
+                    <span class="bottom-line"></span>
+                    <div class="link">
+                      <div class="swiper-slide-container circles">
+                        <div class="circle-container">
+                          <span class="center-text">معرفه أكثر بالجدول</span>
+                          <div class="circle">
+                            <div class="big-circle">
+                              <span class="medium-circle"
+                                ><span class="small-circle"></span
+                              ></span>
+                            </div>
+                          </div>
+                          <span class="curve-line"></span
+                          ><span class="verticl-line"></span
+                          ><span class="bottom-dot"></span>
+                        </div>
+                        <div class="information">
+                          <div class="title"><h3>تصميم مخططات السلامة</h3></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide orange">
+                    <span class="bottom-line"></span>
+                    <div class="link">
+                      <div class="swiper-slide-container circles">
+                        <div class="circle-container">
+                          <span class="center-text">معرفه أكثر بالجدول</span>
+                          <div class="circle">
+                            <div class="big-circle">
+                              <span class="medium-circle"
+                                ><span class="small-circle"></span
+                              ></span>
+                            </div>
+                          </div>
+                          <span class="curve-line"></span
+                          ><span class="verticl-line"></span
+                          ><span class="bottom-dot"></span>
+                        </div>
+                        <div class="information">
+                          <div class="title"><h3>عقود الصيانة</h3></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide orange">
+                    <span class="bottom-line"></span>
+                    <div class="link">
+                      <div class="swiper-slide-container circles">
+                        <div class="circle-container">
+                          <span class="center-text">معرفه أكثر بالجدول</span>
+                          <div class="circle">
+                            <div class="big-circle">
+                              <span class="medium-circle"
+                                ><span class="small-circle"></span
+                              ></span>
+                            </div>
+                          </div>
+                          <span class="curve-line"></span
+                          ><span class="verticl-line"></span
+                          ><span class="bottom-dot"></span>
+                        </div>
+                        <div class="information">
+                          <div class="title"><h3>أنضمه معادله الضغط</h3></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide orange">
+                    <span class="bottom-line"></span>
+                    <div class="link">
+                      <div class="swiper-slide-container circles">
+                        <div class="circle-container">
+                          <span class="center-text">معرفه أكثر بالجدول</span>
+                          <div class="circle">
+                            <div class="big-circle">
+                              <span class="medium-circle"
+                                ><span class="small-circle"></span
+                              ></span>
+                            </div>
+                          </div>
+                          <span class="curve-line"></span
+                          ><span class="verticl-line"></span
+                          ><span class="bottom-dot"></span>
+                        </div>
+                        <div class="information">
+                          <div class="title"><h3>أنظمة إنذار الحريق</h3></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- our products -->
+      <div id="our-products" class="our-products">
+        <div class="container">
+          <div class="images">
+            <div class="img-container">
+              <img src="./assets/images/our-products/p1.png" alt="منتجاتنا" />
+              <h3>المظخات</h3>
+            </div>
+            <div class="img-container">
+              <img src="./assets/images/our-products/p2.png" alt="منتجاتنا" />
+              <h3>رشاشات الماء</h3>
+            </div>
+            <div class="img-container">
+              <img src="./assets/images/our-products/p3.png" alt="منتجاتنا" />
+              <h3>الطفايات</h3>
+            </div>
+            <div class="img-container">
+              <img src="./assets/images/our-products/p4.png" alt="منتجاتنا" />
+              <h3>المواسير</h3>
+            </div>
+            <div class="img-container">
+              <img src="./assets/images/our-products/p5.png" alt="منتجاتنا" />
+              <h3>اللوحات الأرشادية</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer start -->
+      <div class="footer">
+        <div class="container">
+          <div class="subscribe">
+            <div class="container">
+              <div class="right">
+                <div class="title">
+                  <h3>الأشتراك في القائمه البريديه</h3>
+                  <p>لمعرفة اخر الاخبار عن شركتنا بكل سهولة سجل الآن</p>
+                </div>
+              </div>
+              <div class="left">
+                <div class="input">
+                  <i class="bx bx-envelope"></i>
+                  <input
+                    type="email"
+                    required=""
+                    placeholder="كتابه البريد الألكتروني..."
+                  />
+                  <span>أشترك الآن</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-parts" id="contact-us">
+            <div class="container">
+              <div class="parts">
+                <div class="part logo">
+                  <h2>البوارق العربيه</h2>
+                  <img src="./assets/images/logo.png" alt="البوارق العربيه" />
+                </div>
+                <div class="part">
+                  <h2>المنتجات</h2>
+                  <div class="list">
+                    <h4>المظخات</h4>
+                    <h4>مرشات الماء</h4>
+                    <h4>طفايات الحريق</h4>
+                    <h4>مواسير الحديد</h4>
+                    <h4>نظام انذار زيتا</h4>
+                    <h4>اللوحات الارشادية</h4>
+                    <h4>نظام انذار فايرلينك</h4>
+                    <h4>أنظمة الإطفاء بالغاز</h4>
+                  </div>
+                </div>
+                <div class="part">
+                  <h2>الخدمات</h2>
+                  <div class="list">
+                    <h4>عقود الصيانة</h4>
+                    <h4>تركيب المضخات</h4>
+                    <h4>كاميرات المراقبة</h4>
+                    <h4>الاستشارات والأشراف</h4>
+                    <h4>تراخيص الدفاع المني</h4>
+                    <h4>تركيب جميع أنظمة الإنذار</h4>
+                    <h4>تركيب جميع أنظمة الإطفاء</h4>
+                    <h4>تصاميم واعتماد مخططات السلامة</h4>
+                  </div>
+                </div>
+                <div class="part">
+                  <h2>التواصل معنا</h2>
+                  <div class="list">
+                    <h4>info@albawariq.com</h4>
+                    <h4>0505617740 - 920009975</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div class="copyright">
+              <p>
+                جميع الحقوق محفوظة لـ البوارق العربيه - الموقع يعمل على جميع
+                الاجهزة الذكية بدقة عالية
+              </p>
+              <span>تصميم وتنفيذ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- footer End -->
+      <!-- stuff -->
+      <button class="toTopPage" id="scroll-to-top">
+        <i class="bx bxs-up-arrow"></i>
+      </button>
+
+      <a href="https://wa.me/966" class="whatsApp">
+        <i class="bx bxl-whatsapp"></i>
+      </a>
+
+      <a href="" rel="noreferrer" class="call">
+        <i class="bx bxs-phone"></i>
+      </a>
+    </main>
+    <!-- modal -->
+    <style>
+      .modal {
+        display: flex;
+        overflow: hidden;
+        position: fixed;
+        inset: 0;
+        z-index: 300000;
+        justify-content: center;
+        align-items: center;
+      }
+      .overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        position: fixed;
+        z-index: 300000;
+        inset: 0;
+      }
+      .modal .content {
+        background-color: #ffffff;
+        text-align: left;
+        max-width: 600px;
+        display: flex;
+        max-height: calc(100% - 64px);
+        flex-direction: column;
+        z-index: 3000000;
+        margin: 32px;
+        position: relative;
+        overflow-y: auto;
+        overflow-x: hidden;
+        border-radius: 0.25rem;
+        box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2),
+          0px 24px 38px 3px rgba(0, 0, 0, 0.14),
+          0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+        border-radius: 4px;
+        color: rgba(0, 0, 0, 0.87);
+        transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        background-color: #fff;
+      }
+      .modal .content .heading {
+        margin: 0;
+        display: flex;
+        padding: 16px;
+        align-items: center;
+        font-family: Cairo !important;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+      }
+    </style>
+    <template x-data x-if="$store.modals.activeModal">
+      <div
+        x-show="$store.modals.activeModal"
+        x-transition.delay.1s
+        x-transition:enter="fade-in"
+        x-cloak
+        class="modal"
+      >
+        <div class="overlay" @click="$store.modals.modal(null)"></div>
+        <div class="content">
+          <div class="heading">
+            <button
+              @click="$store.modals.modal(null)"
+              style="
+                flex: 0 0 auto;
+                color: rgba(0, 0, 0, 0.54);
+                padding: 12px;
+                overflow: visible;
+                font-size: 1.5rem;
+                text-align: center;
+                transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1)
+                  0ms;
+                border-radius: 50%;
+                cursor: pointer;
+              "
+            >
+              <i class="bx bx-x"></i>
+            </button>
+            <h6
+              style="
+                font-weight: 500;
+                line-height: 1.6;
+                letter-spacing: 0.0075em;
+                font-size: 1.25rem;
+              "
+              x-text="$store.modals.activeModal && $store.modals.activeModal.heading"
+            ></h6>
+          </div>
+          <div
+            style="
+              border-top: 1px solid rgba(0, 0, 0, 0.12);
+              border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+              padding: 16px;
+            "
+          >
+            <p
+              style="
+                font-size: 1rem;
+                font-family: 'Cairo', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 400;
+                line-height: 1.5;
+                letter-spacing: 0.00938em;
+                margin-bottom: 0.35em;
+              "
+              x-text="$store.modals.activeModal && $store.modals.activeModal.content"
+            ></p>
+            <div style="padding: 20px">
+              <img
+                :src="$store.modals.activeModal.src"
+                :alt="$store.modals.activeModal.heading"
+                style="width: 100%"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- modal -->
+    <div
+      id="loader"
+      style="
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        z-index: 1000000;
+      "
+    >
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <script>
+      window.onload = (ev) => {
+        document.body.dataset["loading"] = "false";
+      };
+    </script>
+
+    <script>
+      const scrollToTopButton = document.getElementById("scroll-to-top");
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          scrollToTopButton.style.display = "flex";
+        } else {
+          scrollToTopButton.style.display = "none";
+        }
+      }
+      window.onscroll = () => {
+        scrollFunction();
+      };
+      scrollToTopButton.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+
+    <script>
+      const homeSwiper = new Swiper(".home-swiper-swiper", {
+        direction: "horizontal",
+        loop: true,
+      });
+      const orangeSwiper = new Swiper(".orange-swiper", {
+        loop: true,
+        lazy: true,
+        autoplay: true,
+        slidesPerView: 3,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: ".orange-swiper .swiper-button-next",
+          prevEl: ".orange-swiper .swiper-button-prev",
+        },
+        pagination: {
+          clickable: true,
+          el: ".orange-swiper .swiper-pagination",
+        },
+        breakpoints: {
+          100: {
+            slidesPerView: 1,
+          },
+          600: {
+            slidesPerView: 2,
+          },
+          800: {
+            slidesPerView: 3,
+          },
+          1000: {
+            slidesPerView: 4,
+          },
+        },
+      });
+      const photosSwiper = new Swiper(".photos-swiper", {
+        spaceBetween: 50,
+        loop: true,
+        breakpoints: {
+          100: {
+            slidesPerView: 1,
+          },
+          400: {
+            slidesPerView: 2,
+          },
+
+          600: {
+            slidesPerView: 3,
+          },
+
+          800: {
+            slidesPerView: 4,
+          },
+        },
+      });
+      const productSwiper = new Swiper(".product-swiper-swiper", {
+        spaceBetween: 30,
+        slidesPerView: 2,
+        loop: true,
+        pagination: {
+          clickable: true,
+          type: "bullets",
+          el: ".product-swiper-swiper-pagination",
+        },
+        breakpoints: {
+          100: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+
+          900: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+        },
+      });
+      const ourNewsSwiper = new Swiper(".our-news-swiper-swiper", {
+        spaceBetween: 30,
+        slidesPerView: 3,
+        loop: true,
+        autoplay: true,
+        pagination: {
+          clickable: true,
+          el: ".our-news-swiper-swiper .swiper-pagination",
+        },
+        breakpoints: {
+          100: {
+            slidesPerView: 1,
+          },
+          600: {
+            slidesPerView: 2,
+          },
+          800: {
+            slidesPerView: 3,
+          },
+          1000: {
+            slidesPerView: 4,
+          },
+        },
+      });
+    </script>
+
+    <script>
+      document.addEventListener("alpine:init", () => {
+        Alpine.store("modals", {
+          activeModal: null,
+
+          modal(modalContent) {
+            this.activeModal = modalContent;
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
