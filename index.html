@@ -17,7 +17,6 @@
       name="description"
       content="البوارق العربيه - AL-BAWARIQ AL ARABIA "
     />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap"
       rel="stylesheet"
@@ -26,7 +25,7 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <link rel="stylesheet" href="./static/index.css" />
     <style>
       .lds-ripple {
@@ -351,7 +350,7 @@
         </div>
       </div>
       <!-- our service -->
-      <div class="our-service" id="our-service" x-data="{ tab: 'photos' }">
+      <div class="our-service" id="our-service" x-data="{ tab: 'all' }">
         <div class="container">
           <div class="header">
             <div class="title">
@@ -362,21 +361,18 @@
               <a
                 :class="{ 'active': tab === 'all' }"
                 x-on:click.prevent="tab = 'all'"
-                href="#"
                 class="tab"
                 ><h3>الكل</h3></a
               >
               <a
                 :class="{ 'active': tab === 'photos' }"
                 x-on:click.prevent="tab = 'photos'"
-                href="#"
                 class="tab"
                 ><h3>الصور</h3></a
               >
               <a
                 :class="{ 'active': tab === 'videos' }"
                 x-on:click.prevent="tab = 'videos'"
-                href="#"
                 class="tab"
                 ><h3>الفيديوهات</h3></a
               >
