@@ -141,8 +141,8 @@
       </div>
       <!-- nav bar slide -->
       <div x-data :class="$store.mobileNav && 'open-nav'" class="navbar-slide">
-        <div class="close" @click="$store.mobileNav=false" >
-          <i class='bx bx-x' style="font-size: 20px;"></i>
+        <div class="close" @click="$store.mobileNav=false">
+          <i class="bx bx-x" style="font-size: 20px"></i>
         </div>
         <div class="container">
           <div class="logo">
@@ -217,42 +217,36 @@
                 <img
                   src="./assets/images/home-swiper/9-min.jpg"
                   alt="شركه البوارق العربيه"
-                  loading="lazy"
                 />
               </div>
               <div class="swiper-slide" data-swiper-slide-index="0">
                 <img
                   src="./assets/images/home-swiper/8-min.jpg"
                   alt="شركه البوارق العربيه"
-                  loading="lazy"
                 />
               </div>
               <div class="swiper-slide" data-swiper-slide-index="1">
                 <img
                   src="./assets/images/home-swiper/slider-min.png"
                   alt="شركه البوارق العربيه"
-                  loading="lazy"
                 />
               </div>
               <div class="swiper-slide" data-swiper-slide-index="2">
                 <img
                   src="./assets/images/home-swiper/5-min.jpg"
                   alt="شركه البوارق العربيه"
-                  loading="lazy"
                 />
               </div>
               <div class="swiper-slide" data-swiper-slide-index="3">
                 <img
                   src="./assets/images/home-swiper/انذار-min.png"
                   alt="شركه البوارق العربيه"
-                  loading="lazy"
                 />
               </div>
               <div class="swiper-slide" data-swiper-slide-index="4">
                 <img
                   src="./assets/images/home-swiper/4-min.jpeg"
                   alt="شركه البوارق العربيه"
-                  loading="lazy"
                 />
               </div>
             </div>
@@ -292,7 +286,6 @@
               <img
                 src="./assets/images/home-swiper/we-company-min.png"
                 alt="our company"
-                loading="lazy"
               />
             </div>
           </div>
@@ -306,7 +299,6 @@
               <img
                 src="./assets/images/service/about-min.png"
                 alt="our company"
-                loading="lazy"
               />
             </div>
           </div>
@@ -317,7 +309,6 @@
                 <img
                   src="./assets/images/service/offer/fire.png"
                   alt="our offers"
-                  loading="lazy"
                 />
                 <h3>شهاده سلامه التمديدات الكهربائيه</h3>
               </div>
@@ -325,7 +316,6 @@
                 <img
                   src="./assets/images/service/offer/safty-1.png"
                   alt="our offers"
-                  loading="lazy"
                 />
                 <h3>ترخيص-الدفاع-المدني</h3>
               </div>
@@ -333,7 +323,6 @@
                 <img
                   src="./assets/images/service/offer/sdsd.png"
                   alt="our offers"
-                  loading="lazy"
                 />
                 <h3>تركيب جميع أنظمة الإنذار المبكر من الحريق</h3>
               </div>
@@ -341,7 +330,6 @@
                 <img
                   src="./assets/images/service/offer/safty-1.png"
                   alt="our offers"
-                  loading="lazy"
                 />
                 <h3>تركيب جميع أنظمه الأطفاء</h3>
               </div>
@@ -395,7 +383,6 @@
                           ><img
                             src="./assets/images/service/1-min.png"
                             alt="first img"
-                            loading="lazy"
                           />
                         </div>
                       </div>
@@ -407,7 +394,6 @@
                           ><img
                             src="./assets/images/service/2-min.png"
                             alt="first img"
-                            loading="lazy"
                           />
                         </div>
                       </div>
@@ -419,7 +405,6 @@
                           ><img
                             src="./assets/images/service/3-min.png"
                             alt="first img"
-                            loading="lazy"
                           />
                         </div>
                       </div>
@@ -431,7 +416,6 @@
                           ><img
                             src="./assets/images/service/4-min.png"
                             alt="first img"
-                            loading="lazy"
                           />
                         </div>
                       </div>
@@ -443,7 +427,6 @@
                           ><img
                             src="./assets/images/service/5-min.png"
                             alt="first img"
-                            loading="lazy"
                           />
                         </div>
                       </div>
@@ -455,7 +438,6 @@
                           ><img
                             src="./assets/images/service/6-min.png"
                             alt="first img"
-                            loading="lazy"
                           />
                         </div>
                       </div>
@@ -467,7 +449,6 @@
                           ><img
                             src="./assets/images/service/7-min.png"
                             alt="first img"
-                            loading="lazy"
                           />
                         </div>
                       </div>
@@ -512,7 +493,6 @@
                                     <img
                                       :src="product.src"
                                       :alt="product.heading"
-                                      loading="lazy"
                                     />
                                   </div>
                                 </div>
@@ -556,11 +536,7 @@
                         <div class="swiper-slide-container">
                           <div class="img-container">
                             <div class="image">
-                              <img
-                                :src="ournew.src"
-                                :alt="ournew.heading"
-                                loading="lazy"
-                              />
+                              <img :src="ournew.src" :alt="ournew.heading" />
                             </div>
                           </div>
                           <div class="information">
@@ -1107,9 +1083,8 @@
             this.activeModal = modalContent;
           },
         });
-        Alpine.store("mobileNav",false)
+        Alpine.store("mobileNav", false);
       });
-    
-</script>
+    </script>
   </body>
 </html>
