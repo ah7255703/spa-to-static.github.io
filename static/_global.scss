@@ -1,0 +1,35 @@
+//   primary: "#F05600",
+//   secondary: "#F05600",
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Cairo";
+  text-align: right;
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100vw !important;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+.link {
+  color: white;
+  text-decoration: none;
+}
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+$primary: #f05600;
+$primary-8: rgba($primary, 0.8);
+$primary-5: rgba($primary, 0.5);
+$primary-3: rgba($primary, 0.3);
+$primary-2: rgba($primary, 0.2);
+$primary-1: rgba($primary, 0.1);
