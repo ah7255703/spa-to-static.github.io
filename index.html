@@ -132,11 +132,43 @@
       <!-- mobile nav bar -->
       <div class="navbar mobile-navbar">
         <div class="container">
-          <div class="menu">
+          <div @click="$store.mobileNav=true" x-data class="menu">
             <i class="bx bx-menu menu-icon"></i>
           </div>
           <div class="search">
             <i class="bx bx-search-alt-2 search-icon"></i>
+          </div>
+        </div>
+      </div>
+      <!-- nav bar slide -->
+      <div x-data :class="$store.mobileNav && 'open-nav'" class="navbar-slide">
+        <div class="close" @click="$store.mobileNav=false" >
+          <i class='bx bx-x' style="font-size: 20px;"></i>
+        </div>
+        <div class="container">
+          <div class="logo">
+            <img src="./assets/images/logo.png" alt="صوره الشركه" />
+          </div>
+          <div class="list-icons-container">
+            <div class="list">
+              <div class="list-container">
+                <a class="" href="#we-company"><h3>من نحن</h3></a
+                ><a class="" href="#contact-us"><h3>ألاتصال بنا</h3></a
+                ><a class="" href="#our-service"><h3>خدماتنا</h3></a
+                ><a class="" href="#our-products"><h3>منتجاتنا</h3></a>
+              </div>
+            </div>
+            <div class="icons">
+              <div class="icon facebook">
+                <i class="bx bxl-facebook-square"></i>
+              </div>
+              <div class="icon twitter">
+                <i class="bx bxl-twitter"></i>
+              </div>
+              <div class="icon whatsapp">
+                <i class="bx bxl-whatsapp"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -519,7 +551,10 @@
               >
                 <div x-data class="swiper-wrapper">
                   <template x-for="ournew in ourNews">
-                    <div class="swiper-slide" @click="$store.modals.modal(ournew)">
+                    <div
+                      class="swiper-slide"
+                      @click="$store.modals.modal(ournew)"
+                    >
                       <span class="bottom-line"></span>
                       <div class="link">
                         <div class="swiper-slide-container">
@@ -1076,7 +1111,9 @@
             this.activeModal = modalContent;
           },
         });
+        Alpine.store("mobileNav",false)
       });
-    </script>
+    
+</script>
   </body>
 </html>
